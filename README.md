@@ -1,4 +1,4 @@
-# My Personal Leetcode
+# Our Personal Leetcode(Owners - Vedant & Siddhesh)
 
 This is a personal Leetcode project .
 
