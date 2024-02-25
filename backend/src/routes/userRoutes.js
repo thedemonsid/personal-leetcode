@@ -3,6 +3,7 @@ import { User } from "../models/users.model.js";
 const router = express.Router();
 const privateKey = process.env.PRIVATE_KEY;
 
+// Sign up for user
 router.post("/signup", async function (req, res) {
   const { username, email, password } = req.body;
   const existingUser = await User.findOne({ username: username, email: email });
@@ -22,6 +23,7 @@ router.post("/signup", async function (req, res) {
   }
 });
 
+//Sign in for user
 router.post("/signin", async function (req, res) {
   const { username, password } = req.body;
   const isValidUser = await User.findOne({ username, password });
@@ -30,22 +32,6 @@ router.post("/signin", async function (req, res) {
   }
   const token = jwt.sign({ username }, privateKey);
   res.json({ token, message: "Token Created successfully" });
-});
-
-router.get("/users", async function (req, res) {
-  const authHeader = req.headers["authorization"];
-  try {
-    const decoded = jwt.verify(authHeader, privateKey);
-    const isValidUser = await User.findOne({ username: decoded.username });
-    if (isValidUser) {
-      return res.send(isValidUser);
-    } else {
-      res.status(404).send("Invalid token, Please Sign In ");
-    }
-  } catch (error) {
-    console.log(error);
-    res.status(500).send("Error at server on /users");
-  }
 });
 
 // Export the router
