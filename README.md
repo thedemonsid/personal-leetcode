@@ -13,11 +13,20 @@ This is a personal Leetcode project .
 - Leaderboard: [TODO] Implement a leaderboard to track user rankings.
 
 ## Getting Started
+
 ### Backend
+
 1. Clone the repository: `git clone https://github.com/your-username/personal-leetcode.git`
 2. Move to backend folder : `cd ./backend`
 3. Install dependencies: `npm install`
-4. Start the development server: `npm run dev`
+4. Add .env file in backend folder , it will have following constants
+
+- PORT
+- MONGODB_URL
+- PRIVATE_KEY (for jwt)
+- MONGO_ID (the name of database)
+
+5. Start the development server: `npm run dev`
 
 ## Contributing
 
