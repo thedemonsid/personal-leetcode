@@ -13,7 +13,7 @@ This is a personal Leetcode project .
 - Leaderboard: [TODO] Implement a leaderboard to track user rankings.
 
 ## Getting Started
-
+### Backend
 1. Clone the repository: `git clone https://github.com/your-username/personal-leetcode.git`
 2. Move to backend folder : `cd ./backend`
 3. Install dependencies: `npm install`
