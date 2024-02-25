@@ -15,10 +15,10 @@ This is a personal Leetcode project .
 ## Getting Started
 
 1. Clone the repository: `git clone https://github.com/your-username/personal-leetcode.git`
-2. Install dependencies: `npm install`
-3. Start the development server: `npm start`
+2. Move to backend folder : `cd ./backend`
+3. Install dependencies: `npm install`
+4. Start the development server: `npm run dev`
 
 ## Contributing
 
 Contributions are welcome! If you have any suggestions or improvements, feel free to open an issue or submit a pull request.
-
