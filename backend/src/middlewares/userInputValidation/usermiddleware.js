@@ -2,7 +2,7 @@ import {
     validateUsername,
     validatePassword,
     validateEmail,
-  } from "../../utils/userInputValidation";
+  } from "../../utils/userInputValidation.js";
   
   export function userValidation(req, res, next) {
     const username = req.body.username;
