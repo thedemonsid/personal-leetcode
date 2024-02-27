@@ -48,6 +48,28 @@ export async function createBlogController(req, res, next) {
     });
   }
 }
-export async function getBlogController() {}
+export async function getBlogController(req, res, next) {
+  try {
+    const id = req.query.id;
+    if (!id) {
+      return res.status(404).json({
+        success: false,
+        message: "Please give the Id of Blog",
+      });
+    }
+    const blogContent = await Blog.findById(id);
+    res.status(200).json({
+      success: true,
+      message: "Got the blog From DB",
+      blog: blogContent,
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: "Failed to get Blog from DB",
+      error,
+    });
+  }
+}
 export async function updateBlogController() {}
 export async function deleteBlogController() {}
