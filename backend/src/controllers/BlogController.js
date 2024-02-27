@@ -71,5 +71,38 @@ export async function getBlogController(req, res, next) {
     });
   }
 }
-export async function updateBlogController() {}
+export async function updateBlogController(req, res, next) {
+  try {
+    const { title, content, image } = req.body;
+    const id = req.query.id; 
+    if (!title || !content || !image) {
+      return res.status(400).json({
+        success: false,
+        message: "Please send all content to update a blog",
+      });
+    }
+    const blog = await Blog.findById(id);
+    if (!blog) {
+      return res.status(404).json({
+        success: false,
+        message: "Blog not found",
+      });
+    }
+    blog.title = title;
+    blog.content = content;
+    blog.image = image;
+    await blog.save();
+    res.status(200).json({
+      success: true,
+      message: "Updated the blog",
+      blog,
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: "Failed to update blog",
+      error,
+    });
+  }
+}
 export async function deleteBlogController() {}
