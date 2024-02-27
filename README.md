@@ -9,6 +9,7 @@ This is a personal Leetcode project .
 - Problem List: [TODO] Display a list of coding problems.
 - Problem Details: [TODO] Show the details of a specific problem.
 - Solution Submission: [TODO] Allow users to submit their solutions to problems.
+- Blog Backend : [TODO] Allow users to write Blogs on our website.
 - Remote IDE: [TODO] Allow user to write and test their programs online/remotely
 - Leaderboard: [TODO] Implement a leaderboard to track user rankings.
 
