@@ -1,6 +1,7 @@
 import express from "express";
 import {
   createBlogController,
+  deleteBlogController,
   getAllBlogsController,
   getBlogController,
   updateBlogController,
@@ -14,7 +15,7 @@ router.put("/create-blog", createBlogController);
 router.get("/get-blog/", getBlogController);
 //Update A Blog
 router.put("/update-blog/", updateBlogController);
-// //Delete A Blog
-// router.delete("/delete-blog/:id", deleteBlogController);
+//Delete A Blog
+router.delete("/delete-blog/", deleteBlogController);
 
 export default router;

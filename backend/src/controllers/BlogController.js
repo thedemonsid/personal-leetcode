@@ -74,7 +74,13 @@ export async function getBlogController(req, res, next) {
 export async function updateBlogController(req, res, next) {
   try {
     const { title, content, image } = req.body;
-    const id = req.query.id; 
+    const id = req.query.id;
+    if (!id) {
+      return res.status(400).json({
+        success: false,
+        message: "Please send the blog id",
+      });
+    }
     if (!title || !content || !image) {
       return res.status(400).json({
         success: false,
@@ -105,4 +111,31 @@ export async function updateBlogController(req, res, next) {
     });
   }
 }
-export async function deleteBlogController() {}
+export async function deleteBlogController(req, res, next) {
+  try {
+    const id = req.query.id;
+    if (!id) {
+      return res.status(400).json({
+        success: false,
+        message: "Please send the blog id",
+      });
+    }
+    const blog = await Blog.findByIdAndDelete(id);
+    if (!blog) {
+      return res.status(404).json({
+        success: false,
+        message: "Blog not found",
+      });
+    }
+    res.status(200).json({
+      success: true,
+      message: "Deleted the blog",
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: "Failed to delete blog",
+      error,
+    });
+  }
+}
