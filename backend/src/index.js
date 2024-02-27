@@ -10,7 +10,7 @@ app.use(express.json());
 
 connectDB();
 
-app.use("/api", userRoutes);
+app.use("/user", userRoutes);
 
 app.use(function (err, req, res, next) {
   res.status(500).json({ message: `Error in Server : ${err}` });
