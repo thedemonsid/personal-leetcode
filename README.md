@@ -6,17 +6,17 @@ This is a personal Leetcode project .
 
 - User Sign In: The backend for user sign in is already implemented.
 - User Sign Up: Implement the backend for user sign up.
-- Problem List: [TODO] Display a list of coding problems.
-- Problem Details: [TODO] Show the details of a specific problem.
-- Solution Submission: [TODO] Allow users to submit their solutions to problems.
-- Blog Backend : [TODO] Allow users to write Blogs on our website.
+- Problem List: Display a list of coding problems.
+- Problem Details: Show the details of a specific problem.
+- Solution Submission: Allow users to submit their solutions to problems.
+- Blog Backend : Allow users to write Blogs on our website.
 - Remote IDE: [TODO] Allow user to write and test their programs online/remotely
 - Leaderboard: [TODO] Implement a leaderboard to track user rankings.
 
 ## Getting Started
 
 ### Backend
- 
+
 1. Clone the repository: `git clone https://github.com/your-username/personal-leetcode.git`
 2. Move to backend folder : `cd ./backend`
 3. Install dependencies: `npm install`
