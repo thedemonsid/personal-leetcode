@@ -2,6 +2,7 @@ import express from "express";
 import "dotenv/config";
 import userRoutes from "./routes/userRoutes.js";
 import blogRoutes from "./routes/blogRoutes.js";
+import problemRoutes from "./routes/problemRoutes.js";
 import connectDB from "./db/index.js";
 
 const app = express();
@@ -12,6 +13,7 @@ connectDB();
 
 app.use("/user", userRoutes);
 app.use("/blog", blogRoutes);
+app.use("/problem", problemRoutes);
 app.use(function (err, req, res, next) {
   res.status(500).json({ message: `Error in Server : ${err}` });
 });
