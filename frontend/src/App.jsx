@@ -1,14 +1,14 @@
-import { useState } from 'react'
-const App = () => {
-  return (
-    <div className='w-full h-2 bg-red-200 '>
-      <div className="navright">
-        <button className='loginbutton'> Login</button>
-        <button className='getin'> Get In </button>
-        
-      </div>
-    </div>
-  )
-}
+import { useState } from "react";
+import Navbar from "./Navbar";
 
-export default App
+
+const App = () => {
+  return ( <div>
+<Navbar/>
+  </div>
+
+  );
+};
+
+
+export default App;
