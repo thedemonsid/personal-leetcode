@@ -32,5 +32,3 @@ node_modules/
 # Environment variables
 .env*
 
-# Tailwind CSS
-tailwind.config.js
