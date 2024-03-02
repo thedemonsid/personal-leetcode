@@ -7,7 +7,8 @@ const App = () => {
   return (
     <div>
       <Router>
-        <Navbar />
+        <Navbar />{" "}
+        {/*Navbar component is in here becaue it is common for all the routes*/}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/blogs" element={<Blogs />} />
