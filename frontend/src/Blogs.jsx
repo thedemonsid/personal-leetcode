@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useState } from "react";
 import backgroundImage from './assets/bgspotlight.png';
 // fuctional comopnent for creating blog posts uses props to display date, title and description of the blog post
 // SVG's are used for the read more button
@@ -30,6 +31,18 @@ const BlogPost = ({ date, title, description }) => (
 // A blog page with a blog post and a background image
 // The blog post is created using the BlogPost component
 function Blogs() {
+  const [blogs, setBlogs]=useState([])
+  useEffect( () => {
+    const fetchBlogs = async () => {
+      console.log('fetching blogs');
+      console.log(blogs.blogs)
+    const response = await fetch('http://localhost:3000/blog/all-blogs');
+    const data = await response.json();
+    console.log(data);
+    setBlogs(data.blogs);
+  }
+  fetchBlogs();
+}, []);
   return (
     <div className="dark:bg-black dark:text-gray-50 min-h-screen">
       <div className="container grid grid-cols-12 mx-auto">
@@ -66,7 +79,7 @@ function Blogs() {
           </div>
         </div>
         <div className="flex flex-col col-span-12 p-6 divide-y lg:col-span-6 lg:p-10 dark:divide-gray-700">
-          <BlogPost
+          {/* <BlogPost
             date="2 March"
             title="Lorem ipsum dolor sit."
             description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, a!"
@@ -85,7 +98,14 @@ function Blogs() {
             date="2 March"
             title="Lorem ipsum dolor sit."
             description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, a!"
-          />
+          /> */}
+          {blogs.map((blog)=>(
+            <BlogPost
+            date={blog.date}
+            title={blog.title}
+            description={blog.content}
+            />
+          ))}
         </div>
       </div>
     </div>
