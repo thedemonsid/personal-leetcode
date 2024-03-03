@@ -4,10 +4,11 @@ import userRoutes from "./routes/userRoutes.js";
 import blogRoutes from "./routes/blogRoutes.js";
 import problemRoutes from "./routes/problemRoutes.js";
 import connectDB from "./db/index.js";
-
+import cors from "cors"; //Cross Origin Resource Sharing for devlopment purpose only
 const app = express();
 const port = process.env.PORT;
 app.use(express.json());
+app.use(cors());
 
 connectDB();
 
