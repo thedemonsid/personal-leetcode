@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
-import backgroundImage from './assets/bgspotlight.png';
+import backgroundImage from './Blogassets/bgspotlight.png'
 // fuctional comopnent for creating blog posts uses props to display date, title and description of the blog post
 // SVG's are used for the read more button
 const BlogPost = ({ date, title, description }) => (
@@ -8,7 +8,7 @@ const BlogPost = ({ date, title, description }) => (
     <span>{date}</span>
     <h1 className="text-3xl font-bold font-retro">{title}</h1>
     <p>{description}</p>
-    <a
+    <a 
       href="#"
       className="inline-flex items-center py-2 space-x-2 text-sm dark:text-violet-400"
     >
@@ -79,26 +79,7 @@ function Blogs() {
           </div>
         </div>
         <div className="flex flex-col col-span-12 p-6 divide-y lg:col-span-6 lg:p-10 dark:divide-gray-700">
-          {/* <BlogPost
-            date="2 March"
-            title="Lorem ipsum dolor sit."
-            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, a!"
-          />
-          <BlogPost
-            date="2 march"
-            title="Lorem ipsum dolor sit."
-            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, a!"
-          />
-          <BlogPost
-            date="2 March"
-            title="Lorem ipsum dolor sit."
-            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, a!"
-          />
-          <BlogPost
-            date="2 March"
-            title="Lorem ipsum dolor sit."
-            description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, a!"
-          /> */}
+
           {blogs.map((blog)=>(
             <BlogPost
             date={blog.date}

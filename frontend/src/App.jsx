@@ -1,8 +1,8 @@
 import Navbar from "./Navbar";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Blogs from "./Blogs";
+import Blogs from "./Blogs/Blogs";
 import Problems from "./Problems";
-import Home from "./Home";
+import Home from "./Home/Home";
 const App = () => {
   return (
     <div>
